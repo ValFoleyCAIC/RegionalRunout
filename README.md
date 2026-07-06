@@ -1,4 +1,4 @@
-# regionalRunout
+# Regional Runout
 
 Statewide avalanche release-area detection and runout modeling pipeline
 for Colorado. Turns 1 m LiDAR DEMs and a canopy-cover product into a
