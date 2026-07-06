@@ -100,7 +100,7 @@ line with `--dem-dir`, `--evc-path`, `--canopy-dir`, `--aoi-clip-path`,
 `--release-areas`, `--output-dir`.
 
 
-## Running
+## Run
 
 ### Modes
 
