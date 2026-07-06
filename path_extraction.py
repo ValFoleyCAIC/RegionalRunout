@@ -2,7 +2,7 @@
 Avalanche Path Extraction Module
 
 Author: Valerie Foley
-Last Updated: 3/2026
+Last Updated: 7/2026
 
 Description:
     Converts FlowPy simulation outputs (flux, cell counts, zdelta) into
@@ -39,7 +39,6 @@ logger = logging.getLogger(__name__)
 @dataclass
 class PathExtractionConfig:
     # Configuration for path polygon extraction
-
     # Cells with flux >= this are part of a path. FlowPy's internal
     # flux_threshold (0.003) defines the runout limit; higher values here
     # give tighter paths:
@@ -48,7 +47,7 @@ class PathExtractionConfig:
     #   0.03  = core paths only (good for visualization)
     flux_threshold: float = 0.003
 
-    # Minimum path area (m2) — removes tiny fragments
+    # Minimum path area (m2) — remove tiny fragments
     min_path_area_m2: float = 500.0
 
     # Merge path fragments that share the same release area
@@ -101,7 +100,7 @@ def extract_paths(flux, transform, crs, nodata=-9999.0,
 
     # --- Step 3: Associate with release areas (optional) ---
     # Tag each path region with its contributing release area so fragments
-    # from the same starting zone can be merged.
+    # from the same starting zone are merged.
     release_labels = None
     if release is not None and config.merge_by_release:
         release_labeled, n_release = label(release > 0)
