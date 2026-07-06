@@ -2,13 +2,13 @@
 Resource Monitor for Avalanche Pipeline
 
 Author: Valerie Foley
-Last Updated: 3/2026
+Last Updated: 6/2026
 
 Description:
     Tracks CPU, memory, disk I/O, and wall-clock time during pipeline
     runs. Runs as a background thread, sampling at configurable intervals,
     and generates a per-tile resource report plus scaling projections to
-    help estimate hardware requirements for larger study areas.
+    help estimate hardware requirements for larger areas.
 """
 
 import os
@@ -193,7 +193,7 @@ class ResourceMonitor:
         logger.info("Resource monitor stopped")
 
     def tile_start(self, tile_name, dem_pixels=0, release_pixels=0):
-        # Mark the start of processing a tile.
+        # Note start of processing a tile.
         # @param tile_name: Name of the tile
         # @param dem_pixels: Total DEM pixels
         # @param release_pixels: Number of release area pixels
@@ -214,7 +214,7 @@ class ResourceMonitor:
         logger.debug(f"Monitor: tile started - {tile_name}")
 
     def tile_end(self, status="complete", error=""):
-        # Mark the end of processing a tile.
+        # Note end of processing a tile.
         # @param status: Final status (complete/failed/skipped)
         # @param error: Error message if failed
 
@@ -224,7 +224,7 @@ class ResourceMonitor:
         logger.debug(f"Monitor: tile ended - {status}")
 
     def _finalize_tile(self, status, error=""):
-        # Finalize metrics for the current tile. Called under lock.
+        # Finalize metrics for the current tile.
 
         if self.current_tile is None:
             return
