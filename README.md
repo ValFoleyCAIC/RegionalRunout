@@ -7,6 +7,7 @@ organized within CAIC forecast zones, for public-facing backcountry hazard
 communication and recreation planning.
 
 Author: Valerie Foley
+
 Last Updated: 7/2026
 
 
