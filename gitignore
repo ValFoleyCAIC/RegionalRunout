@@ -1,0 +1,62 @@
+# =====================================================================
+# .gitignore  --  regionalRunout
+# Keep the repo to code + config. Everything below is large binary data,
+# machine-generated output, or scratch that must not be committed.
+# =====================================================================
+
+# --------- Python ---------
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+.conda/
+
+# --------- Input data (large rasters / vectors, never committed) ---------
+data/
+_raw_tnm_cache/
+
+# --------- Pipeline outputs (all variants) ---------
+outputs/
+outputs_*/
+composites/
+
+# --------- Scratch / work ---------
+work/
+
+# --------- Logs ---------
+logs/
+*.log
+
+# --------- Runtime artifacts ---------
+STOP_AFTER_TILE
+*.tmp
+checkpoint_*.json
+*_summary.json
+pipeline_summary.json
+resource_report.json
+resource_summary.txt
+
+# --------- Geospatial payloads (belt-and-suspenders: catch strays anywhere) ---------
+*.tif
+*.tiff
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.gpkg
+*.geojson
+*.kmz
+*.kml
+
+# --------- OS / editor cruft ---------
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
