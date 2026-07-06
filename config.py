@@ -91,8 +91,7 @@ class PerformanceConfig:
     #   exhaust RAM.
     #
     # On a 64-core shared server, max_workers=1, flowpy_cpu_cap=16 uses ~25%
-    # of CPUs and leaves the rest for others. To go higher when the box is
-    # idle, bump flowpy_cpu_cap to 32 (50%) but coordinate with other users.
+    # of CPUs and leaves the rest for other users. .
     max_workers: int = 1
     flowpy_cpu_cap: int = 16
     max_memory_per_worker_gb: float = 15.7
@@ -147,7 +146,7 @@ class VegetationConfig:
     # FSI scaling for the FlowPy forest module: tree_cover_pct / fsi_max_cover,
     # clamped to [0, 1].
     #
-    # Setting this to 60 means 60% canopy IS the maximum forest effect -
+    # Ex: 60 means 60% canopy is the maximum forest effect -
     # additional density above 60% doesn't physically add much more
     # flow-stopping capacity (a mature closed-canopy stand is already at full
     # effect). This steepens the gradient where it matters:
