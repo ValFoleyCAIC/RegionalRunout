@@ -6,10 +6,6 @@ two-class polygon layer, release zones and modeled runout zones,
 organized within CAIC forecast zones, for public-facing backcountry hazard
 communication and recreation planning.
 
-Author: Valerie Foley
-Last Updated: 7/2026
-
-
 ## Pipeline overview
 
 The pipeline runs statewide by tiling each forecast-zone "cluster" into
@@ -227,3 +223,8 @@ and would need changing to run elsewhere:
 - Greene et al. (2022) — SWAG / Relative Size (R4)
 - Colorado Geological Survey — avalanche fatalities
 - AvaFrame com4FlowPy documentation
+
+
+Author: Valerie Foley
+Contact: valerie.foley@state.co.us
+Last Updated: 7/2026
