@@ -2,7 +2,7 @@
 Terrain Analysis Module
 
 Author: Valerie Foley
-Last Updated: 2/2026
+Last Updated: 5/2026
 
 Description:
     DEM loading, smoothing, slope, aspect, curvature, and wind shelter
@@ -167,7 +167,7 @@ def compute_plan_curvature(dem, pixel_size, mask):
 
 
 # --------- Wind Shelter ---------
-
+# Note: This is not being used - it was for initital research/testing
 def compute_wind_shelter(dem, pixel_size, mask, wind_direction_deg=270.0, search_distance_m=300.0):
     # Compute wind shelter index (Winstral et al. 2002 Sx parameter).
     # Higher values = more sheltered (lee side, snow loading zone).
@@ -216,7 +216,7 @@ def compute_wind_shelter(dem, pixel_size, mask, wind_direction_deg=270.0, search
     return shelter
 
 
-# --------- Convenience Function ---------
+# --------- Compute All ---------
 
 def compute_all_terrain(dem_path, smooth_sigma=1.5, compute_curvature=True,
                         wind_shelter_config=None):
@@ -255,7 +255,7 @@ def compute_all_terrain(dem_path, smooth_sigma=1.5, compute_curvature=True,
     return result
 
 
-# --------- Raster Saving ---------
+# --------- Save ---------
 
 def save_raster(output_path, array, transform, crs, nodata=-9999.0, dtype="float32"):
     # Save numpy array as GeoTIFF.
