@@ -2,7 +2,7 @@
 Schedule Runner for Avalanche Pipeline
 
 Author: Valerie Foley
-Last Updated: 4/2026
+Last Updated: 5/2026
 
 Description:
     Supervisor that runs the pipeline only during a configured time window
@@ -11,7 +11,8 @@ Description:
     main.py checks between tiles, so the current tile finishes and the
     worker exits cleanly, then resumes the next day. Skip-resume relies on
     the pipeline's own per-tile checkpoints. DST handled via zoneinfo.
-    Uses minimal resources; safe under nohup for weeks.
+    Safe under nohup for weeks.
+    
 """
 
 import argparse
@@ -244,7 +245,7 @@ class Supervisor:
                     f"{next_open.strftime('%Y-%m-%d %H:%M %Z')} "
                     f"(sleeping {wait_s/3600:.1f}h)"
                 )
-                # Sleep in chunks so we can respond to signals
+                # Sleep in chunks 
                 end_t = time.time() + wait_s
                 while time.time() < end_t and not self._shutdown_requested:
                     time.sleep(min(60.0, end_t - time.time()))
